@@ -89,7 +89,7 @@ do
 done
 
 # Print scriptHelp if there is missing parameter
-if [ -z $containerName ] || [ -z $version ]
+if [ -z $containerName ] || [ -z $version ] || [ -z $version ] || [ -z $imageConfigPath ]
 then
 	echo "Some or all of the parameters are empty";
 	scriptHelp
