@@ -45,7 +45,7 @@ writeCloudServiceSSL() {
 	Description=Apache Container
 
 	[Service]
-	ExecStart=/usr/bin/docker run --rm --name=$containerName -p $externalPort80:80 $externalPort443:443 -v /root/httpd.conf:/usr/local/apache2/conf/httpd.conf -v /root/server.key:/usr/local/apache2/conf/server.key -v /root/server.cert:/usr/local/apache2/conf/server.crt httpd:$version
+	ExecStart=/usr/bin/docker run --rm --name=$containerName -p $externalPort80:80 -p $externalPort443:443 -v /root/httpd.conf:/usr/local/apache2/conf/httpd.conf -v /root/server.key:/usr/local/apache2/conf/server.key -v /root/server.cert:/usr/local/apache2/conf/server.crt httpd:$version
 	ExecStop=/usr/bin/docker stop $containerName
 	ExecStopPost=/usr/bin/docker rm $containerName
 	EOF
